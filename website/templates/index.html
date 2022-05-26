@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>PriceCrawler</title>
+    </head>
+    <body>
+
+        <div class="container">
+            <div id="content">
+                <h2 id="nm">PRICECRAWLER</h2>
+            <form method="POST" action="{% url 'form' %}" class='form-inline'> {% csrf_token %}
+                <div class="input-group">
+                <input type='text' name = "textfield" id='search' class="form-control search-form" placeholder="search...">
+                <span class="input-group-btn" style="width:39px">
+                    <button id="search-this"type="button" class="pull-right btn btn-default search-btn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+                </div>
+            </form>
+            <p class="text-center">Search for anything.</p>
+            </div>
+            <h4><b><font color="white">{{aprice}}</font></b></h4>
+            <h5><font color="white">{{alink}}</font></h5>
+            <br>
+            <h4> <b><font color="white"> {{fprice}}</font></b></h4>
+            <h5><font color="white">{{flink}}</font></h5>
+            <br>
+            <h4> <b><font color = "white">{{bprice}}</font></b></h4>
+            <h5><font color="white">{{blink}}</font></h5>
+            <br>
+            <h4> <b><font color = "white">{{cprice}}</font></b></h4>
+            <h5><font color="white">{{clink}}</font></h5>
+        </div>
+
+
+        <style>
+            html, body {
+                height:100%;
+                background-color: #131313;
+            }
+
+            #nm {
+                text-align: center;
+                color: whitesmoke;
+                padding-bottom: 15px;
+            }
+
+            .well {
+                background-color: #ffffee
+            }
+
+            #content {
+                padding: 25% 25% 5%;  
+            }
+
+            .search-form {
+                border-radius: 30px 0 0 30px;
+            }
+
+            .input-group {
+                width:100%;
+            }
+
+            input-group-btn {
+                max-width:38px;
+            }
+
+            #search {
+                border: 1px;
+            }
+
+            .search-btn {
+                cursor:pointer;
+                border-radius: 0 30px 30px 0; 
+                background-color:#fff;
+                color:#669;
+            }
+
+            .text-center {
+                padding-top: 10px;
+                color: #fff;
+            }
+        </style>
+        
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </body>
+</html>
